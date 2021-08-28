@@ -123,7 +123,8 @@ async def on_message(message):
 
         #All Administrator commands  
         else:
-            print("Admin commands go here")
+            if (messagereceived =="!help"):
+              await message.channel.send("This is your first command for admins! And it sends this response!")
        
 
 
