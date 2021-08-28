@@ -80,10 +80,15 @@ async def on_message(message):
 
     #Gets segments of every message - full message found in 'fullMEssage to avoid over use of Discord API'
     fullMessage = message.content
+    #This is the full message data useful for if you add the translation code
     nexttrans= fullMessage
+    #This splits the message received into words, starting from 0 -> the length each slot matching a value
     sectionsofmessage = fullMessage.rsplit(" ")
+    #This is the 1st word in the message
     introtomessage = sectionsofmessage[0]
+    #This pulls the first character to the bot used for scanning for the prefix on line ~110
     first_char = introtomessage[0]
+    #This pulls the channelID that the message was sent in
     channelDataID = message.channel.id
 
     #Getting the 2nd part of a message
@@ -93,7 +98,7 @@ async def on_message(message):
       secondPartOfMessage = "none"
       
       
-
+    #The message will be converted into lower case so that commands can come in any captial / lowercase format for convenience!
     messagetolower = introtomessage
     messagereceived = messagetolower.lower()
     mention = f'<@!{client.user.id}>'
