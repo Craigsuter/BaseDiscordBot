@@ -111,7 +111,7 @@ async def on_message(message):
 
 
 
-            if (messagereceived =="help"):
+            if (messagereceived =="!help"):
               await message.channel.send("This is your first command! And it sends this response!")
 
 
